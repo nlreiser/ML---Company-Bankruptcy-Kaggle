@@ -1,5 +1,5 @@
 # ML---Company-Bankruptcy-Kaggle
-Get my notebook: https://colab.research.google.com/drive/1GgzlGauogrby4gvZfACqSvS2EJRa7KVb?usp=sharing
+Get my notebook: https://colab.research.google.com/drive/1wEd7PtVP3I56hVY7JiSshlWjGvVelWl5?usp=sharing
 
 I. Introduction: Research Question and Problem for Management
 
@@ -24,8 +24,17 @@ Figure 3. Plots of each relevant feature with a correlation at least 0.5 against
 
 VI. Models
 
-The following models were tested with the data set split at 80/20: Logistic Regression, Naive Bayes, and SVM. The models were fit to 80% of the training dataset and then used on the 'test' 20% remaining of the training dataset to predict bankruptcy. Each model was created for both the original dataset with all feature variables, and the subset of data that only included the list of relevant features found from the correlation matrix as noted above. A confusion matrix was created for each model and they were scored to determine which model was the best for this data. SVM was found to be the best model for both the original dataset and the set of relevant features. SVM correctly predicted 77.3 percent of the test data compared with only 70% for logistic regression and 52% for naive bayes. 
+The following models were tested with the data set split at 80/20: Logistic Regression, Naive Bayes, SVM, Random Forest Classifier, Gradient Boosted Trees, and Extra Tree Classifier. The models were fit to 80% of the training dataset and then used on the 'test' 20% remaining of the training dataset to predict bankruptcy. Each model was created for both the original dataset with all feature variables, and the subset of data that only included the list of relevant features found from the correlation matrix as noted above. A confusion matrix was created for each model and they were scored to determine which model was the best for this data. Extra tree classifier was found to be the best model for the dataset of relevant features. Extra tree classifier correctly predicted 93 percent of the test data (see Table 1 for all model stats and Figure 4 for ROC curve). 
+
+Table 1. Statistics for all models tested on both the original dataset and the selected features dataset.
+<img width="928" alt="Screen Shot 2022-02-06 at 6 15 28 PM" src="https://user-images.githubusercontent.com/97359451/152707796-cdf27f7e-733b-4c19-806a-7f42a738cee8.png">
+
+
+![image](https://user-images.githubusercontent.com/97359451/152707849-7bd24dfa-9988-46f2-8a42-143219ab0df0.png)
+
+Figure 4. ROC Curve of Extra Trees Classifier with Selected Features Dataset
+
 
 VII. Conclusions
 
-After EDA of the dataset, the factors to include in the machine learning model are those that have the greatest impact on likeliness for a company to go bankrupt. After testing several models, SVM performed the best on the training data (using train_test_split). After testing on both the original dataset and the dataset with only relevant features, SVM correctly predicted 77% of bankruptcy instances. This model can be used to determine how to invest in companies or give loans to companies. 
+After EDA of the dataset, the factors to include in the machine learning model are those that have the greatest impact on likeliness for a company to go bankrupt. After testing several models, extra trees classifier performed the best on the training data (using train_test_split). After testing on both the original dataset and the dataset with only relevant features, extra trees classifier correctly predicted 93% of bankruptcy instances. This model can be used to determine how to invest in companies or give loans to companies. 
